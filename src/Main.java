@@ -1,3 +1,4 @@
+import com.screenmatch.calculos.CalculatorMarathon;
 import com.screenmatch.models.Film;
 import com.screenmatch.models.Serie;
 
@@ -17,15 +18,22 @@ public class Main {
 		System.out.println(interstellarDescription+"\n");
 
 		Serie grays = new Serie();
-
-		grays.setLaunching(true);
-
-		grays.setSeasons(22);
 		grays.setTitle("Gray's Anatomy");
 		grays.setReleaseYear(2005);
+		grays.setLaunching(true);
 		grays.setRating(7);
 
+		grays.setSeasons(20);
+		grays.setEpisodesBySeason(10);
+		grays.setMeanMinutesByEpisode(30);
+
 		System.out.println(grays.getDescription());
+
+		CalculatorMarathon marathon = new CalculatorMarathon();
+		marathon.include(interstellar);
+		marathon.include(grays);
+
+		System.out.println("Duração da maratona:" + marathon.getDuration());
 
 	}
 }
